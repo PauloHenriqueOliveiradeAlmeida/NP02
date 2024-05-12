@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--black: #141414;
+	--opacity-black: #14141467;
+	--secondary: #2c2c2c;
+	--white: #F1F1F1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Poppins", sans-serif;
+	color: var(--black);
+}
+
+body {
+	background-color: var(--white);
+}
+
+h1,
+h3 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	top: 0;
+	position: sticky;
+	background-color: var(--white);
+	box-shadow: 0 0px 5px #0000003a;
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	padding: .2rem 2rem;
+}
+
+.header img {
+	width: 8rem;
+}
+
+
+.logo-container a {
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: var(--black);
+	text-decoration: none;
+}
+
+
+/*estilizar navegacao */
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: end;
+	height: 8vh; /*vh é uma unidade responsiva que se adapta a altura da janela do usuario*/
+}
+
+
+/* classe para se referir a ul */
+.nav-list {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+}
+
+.nav-list a {
+	color: var(--black);
+	text-decoration: none;
+}
+.carousel-wrapper {
+	display: flex;
+	overflow-x: scroll;
+	gap: 1rem;
+	margin: 2rem 0px;
+	scrollbar-width: none;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+.carousel-wrapper .carousel-item {
+	scroll-snap-align: center;
+}
+
+.text-container {
+	width: 80%;
+	display: block;
+	margin: 0px auto;
+}
+
+.create-institution-popup {
+	position: fixed;
+	z-index: 1;
+	width: 90%;
+	padding: 2rem;
+	background-color: var(--white);
+	box-shadow: 0px 5px 10px var(--opacity-black);
+	border-radius: .5rem;
+}
+
+.create-institution-popup form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.fa-close {
+	font-size: 1.5rem;
+	align-self: flex-end;
+}
+
+.field input,
+.field select {
+	padding: .5rem;
+	border-radius: .5rem;
+	background-color: var(--white);
+	border: 1px solid var(--opacity-black);
+	outline: none;
+	font-size: .8rem;
+}
+
+.field input:focus,
+.field select:focus {
+	border-width: 2px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 1rem;
+}
+
+.row * {
+	width: 100%;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+}
+
+.button,
+.bubble-button {
+	font-weight: bold;
+	border: none;
+	background-color: var(--black);
+	color: var(--white);
+	transition: background-color .2s linear;
+	cursor: pointer;
+}
+
+.button:hover,
+.bubble-button:hover {
+	background-color: var(--secondary);
+}
+
+.button {
+	border-radius: .5rem;
+	margin-top: 2rem;
+	padding: 1rem;
+	font-size: .9rem;
+}
+
+.button-secondary {
+	background-color: var(--white);
+	color: var(--black);
+	border: 1px solid var(--black);
+}
+
+.button-secondary:hover {
+	background-color: var(--black);
+	color: var(--white);
+}
+
+.bubble-button {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	border-radius: 100%;
+	font-size: 1.4rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+.table-container {
+	width: 80%;
+}
+
+.view-institution-table {
+	display: block;
+	margin: 0 auto;
+	height: 20rem;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	scrollbar-width: none;
+}
+
+.view-institution-table thead {
+	display: none;
+}
+
+.institution_table_body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.institution_table_body tr {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 1rem;
+	border-radius: .5rem;
+	background-color: black;
+	color: var(--white);
+	scroll-snap-align: start;
+}
+
+.json-viewer {
+	background-color: var(--secondary);
+	color: var(--white);
+	padding: 2rem;
+	border-radius: 1rem;
+	max-height: 15rem;
+	overflow-y: scroll;
+}
+
+@media (width >=768px) {
+	.table-container {
+		height: 30rem;
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+		border-radius: .5rem;
+	}
+
+	.view-institution-table {
+		width: 100%;
+		text-align: center;
+		display: table;
+		border-radius: 5rem;
+		border-collapse: collapse;
+	}
+
+	.view-institution-table thead {
+		position: sticky;
+		top: 0px;
+		display: table-header-group;
+		color: var(--white);
+		background-color: var(--black);
+	}
+
+	.view-institution-table th,
+	.view-institution-table td {
+		padding: .5rem 0px;
+	}
+
+	.institution_table_body {
+		display: table-row-group;
+	}
+
+	.institution_table_body tr {
+		display: table-row;
+		scroll-margin: 3rem;
+	}
+
+	.institution_table_body tr:nth-child(odd) {
+		color: var(--black);
+		background-color: var(--white);
+	}
+}
