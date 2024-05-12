@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css">
+
+	<script src="https://kit.fontawesome.com/4adf0a3a74.js" crossorigin="anonymous"></script>
+
+	<title>Instituições</title>
+</head>
+
+<body id="root">
+	<script type="module" src="scripts/factories/header.factory.js"></script>
+	<div class="container">
+		<h1>Instituições</h1>
+		<div class="create-institution-popup" id="create_institution_popup" style="display: none;">
+			<form id="create_institution_form">
+				<i id="close_institution_popup" class="fa-solid fa-close"></i>
+				<h3>Cadastrar nova instituição</h3>
+
+				<div class="row">
+					<div class="field">
+						<label for="name">Nome fantasia:</label>
+						<input type="text" id="name" name="name" min="3" max="100" required />
+					</div>
+					<div class="field">
+						<label for="company-name">Razão social:</label>
+						<input type="text" id="company-name" name="companyName" min="3" max="100" required />
+					</div>
+				</div>
+
+				<div class="field">
+					<label for="cnpj">CNPJ:</label>
+					<input type="text" id="cnpj" name="cnpj" minlength="14" maxlength="14" required></input>
+				</div>
+
+				<div class="row">
+					<div class="field">
+						<label for="gross-income">Renda bruta:</label>
+						<input type="number" step="0.01" id="gross-income" name="grossIncome" min="1" required />
+					</div>
+					<div class="field">
+						<label for="foundation-date">Data de abertura:</label>
+						<input type="date" id="foundation-date" name="foundationDate" required />
+					</div>
+				</div>
+
+				<div class="field">
+					<label for="cep">CEP:</label>
+					<input type="text" name="cep" id="cep" minlength="8" maxlength="8" required>
+				</div>
+
+				<div class="row">
+					<div class="field">
+						<label for="city-selection">Cidade:</label>
+						<select name="city" id="city-selection" required>
+							<option value="default" selected disabled>Selecione a cidade</option>
+						</select>
+					</div>
+
+					<div class="field">
+						<label for="state-selection">Estado:</label>
+						<select name="state" id="state-selection" required>
+							<option value="default" selected disabled>Selecione o estado</option>
+							<option value="AC">Acre</option>
+							<option value="AL">Alagoas</option>
+							<option value="AP">Amapá</option>
+							<option value="AM">Amazonas</option>
+							<option value="BA">Bahia</option>
+							<option value="CE">Ceará</option>
+							<option value="DF">Distrito Federal</option>
+							<option value="ES">Espírito Santo</option>
+							<option value="GO">Goiás</option>
+							<option value="MA">Maranhão</option>
+							<option value="MT">Mato Grosso</option>
+							<option value="MS">Mato Grosso do Sul</option>
+							<option value="MG">Minas Gerais</option>
+							<option value="PA">Pará</option>
+							<option value="PB">Paraíba</option>
+							<option value="PR">Paraná</option>
+							<option value="PE">Pernambuco</option>
+							<option value="PI">Piauí</option>
+							<option value="RJ">Rio de Janeiro</option>
+							<option value="RN">Rio Grande do Norte</option>
+							<option value="RS">Rio Grande do Sul</option>
+							<option value="RO">Rondônia</option>
+							<option value="RR">Roraima</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="SP">São Paulo</option>
+							<option value="SE">Sergipe</option>
+							<option value="TO">Tocantins</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="field">
+						<label for="address">Endereço:</label>
+						<input type="text" id="address" name="address" min="3" max="100" required>
+					</div>
+					<div class="field">
+						<label for="address-number">Número:</label>
+						<input type="number" id="address-number" name="addressNumber" minlength="1" maxlength="4" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<button class="button" type="submit">Cadastrar nova instituição</button>
+					<button class="button button-secondary" type="reset">Apagar</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="table-container">
+			<table class="view-institution-table" id="institution-table">
+				<thead>
+					<tr>
+						<th>Nome fantasia</th>
+						<th>Razão social</th>
+						<th>CNPJ</th>
+						<th>Renda bruta</th>
+						<th>Data de abertura</th>
+						<th>Endereço</th>
+					</tr>
+				<tbody class="institution_table_body" id="institution_table_body">
+				</tbody>
+				</thead>
+			</table>
+		</div>
+
+		<pre class="json-viewer"><code id="json-viewer"></code></pre>
+
+		<button class="bubble-button" id="add_new_institution_button">+</button>
+	</div>
+
+	<script type="module" src="scripts/institution.js"></script>
+</body>
+
+</html>
