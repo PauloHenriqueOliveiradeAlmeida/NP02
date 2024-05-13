@@ -6,7 +6,12 @@
 	--secondary: #2c2c2c;
 	--white: #F1F1F1;
 }
-
+footer{
+	margin-top: 4rem;
+	padding: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	gap: 2rem;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -27,7 +32,6 @@ h3 {
 	text-align: center;
 	margin-bottom: 2rem;
 }
-
 .container {
 	width: 100%;
 	min-height: 100vh;
@@ -245,8 +249,26 @@ form {
 	overflow-y: scroll;
 }
 
+.copyright {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+.container-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.footer-link {
+	width: 15%;
+}
+.logo-image{
+	width: 100%;
+}
 #message {
-  margin-top: 20px;
+	margin-top: 20px;
   padding: 10px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
@@ -267,6 +289,10 @@ form {
 		display: table;
 		border-radius: 5rem;
 		border-collapse: collapse;
+	}
+
+	.footer-link {
+		width: 2%;
 	}
 
 	.view-institution-table thead {
