@@ -88,12 +88,7 @@ nav {
 	gap: 1rem;
 	margin: 2rem 0px;
 	scrollbar-width: none;
-	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
-}
-
-.carousel-wrapper .carousel-item {
-	scroll-snap-align: center;
 }
 
 .text-container {
